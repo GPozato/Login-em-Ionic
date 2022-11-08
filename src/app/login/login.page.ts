@@ -20,6 +20,14 @@ export class LoginPage implements OnInit {
 
   constructor(private FormBuilder: FormBuilder) { }
 
+  get email(){
+    return this.formLogin.get('email');
+  }
+  
+  get senha(){
+    return this.formLogin.get('senha');
+  }
+
   ngOnInit() {
   }
 
