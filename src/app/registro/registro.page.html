@@ -13,28 +13,48 @@
       <ion-item>
         <ion-label position="floating">Nome</ion-label>
         <ion-input id="nome" formControlName="nome"></ion-input>
-
+        <ng-container *ngFor="let erro of mensagensErro.nome">
+          <span class="msg-erro" *ngIf="nome.errors?.[erro.tipo]  && (nome.dirty || nome.touched)">
+            {{erro.aviso}}
+          </span>
+        </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="floating">E-mail</ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
-
+      <ng-container *ngFor="let erro of mensagensErro.email">
+        <span class="msg-erro" *ngIf="email.errors?.[erro.tipo]  && (email.dirty || email.touched)">
+          {{erro.aviso}}
+        </span>
+      </ng-container>
       </ion-item>
       <ion-item>
         <ion-label position="floating">CPF</ion-label>
         <ion-input type="tel" id="cpf" formControlName="cpf"></ion-input>
-
+        <ng-container *ngFor="let erro of mensagensErro.CPF">
+          <span class="msg-erro" *ngIf="CPF.errors?.[erro.tipo]  && (CPF.dirty || CPF.touched)">
+            {{erro.aviso}}
+          </span>
+        </ng-container>
       </ion-item>
 
       <ion-item>
         <ion-label position="floating">Senha</ion-label>
         <ion-input type="password" formControlName="senha"></ion-input>
-
+        <ng-container *ngFor="let erro of mensagensErro.senha">
+          <span class="msg-erro" *ngIf="senha.errors?.[erro.tipo]  && (senha.dirty || senha.touched)">
+            {{erro.aviso}}
+          </span>
+        </ng-container>
       </ion-item>
       <ion-item>
-        <ion-label position="floating">Confirma Senha</ion-label>
+        <ion-label position="floating">Confirmar Senha</ion-label>
         <ion-input type="password" formControlName="confirmaSenha"></ion-input>
-
+        <ng-container *ngFor="let erro of mensagensErro.senha">
+          <span class="msg-erro" *ngIf="senha.errors?.[erro.tipo]  && (senha.dirty || senha.touched)">
+            {{erro.aviso}}
+          </span>
+        </ng-container>
       </ion-item>
     </form>
 

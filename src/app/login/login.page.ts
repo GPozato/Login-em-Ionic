@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
 
   mensagensErro = {
     email: [{tipo: 'required', aviso: 'Preencha o Campo'}, {tipo: 'email', aviso: 'Precisa ser um email valido'}],
-    senha: [{tipo: 'required', aviso: 'Preencha a Senha'}, {tipo: 'email', aviso: 'Precisa ser uma Senha valida'}]
+    senha: [{tipo: 'required', aviso: 'Preencha a Senha'}, {tipo: 'minlength', aviso: 'Precisa ser uma Senha valida'}]
   }
 
   constructor(private FormBuilder: FormBuilder) { }
